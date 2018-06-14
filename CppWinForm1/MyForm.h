@@ -54,6 +54,7 @@ namespace CppWinForm1 {
 
 	private: System::ComponentModel::IContainer^  components;
 	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::PictureBox^  pictureBox5;
 	protected:
 
 	private:
@@ -80,10 +81,12 @@ namespace CppWinForm1 {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox2
@@ -156,6 +159,16 @@ namespace CppWinForm1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(695, 99);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(5, 2);
+			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->pictureBox5->TabIndex = 7;
+			this->pictureBox5->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -164,6 +177,7 @@ namespace CppWinForm1 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(784, 612);
+			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox3);
@@ -179,6 +193,7 @@ namespace CppWinForm1 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -191,12 +206,18 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 	
 		switch (stage) {
 		case 0://szuka trojkata
-			if(pictureBox2->Location.X != pictureBox4->Location.X)
+			if (pictureBox2->Location.X != pictureBox4->Location.X)
+			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X - 1, pictureBox2->Location.Y);
+				this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X - 1, pictureBox5->Location.Y);
+			}
 			else {
 
-				if (pictureBox2->Location.X == (pictureBox4->Location.X)&&pictureBox2->Location.Y <= 500)
+				if (pictureBox2->Location.X == (pictureBox4->Location.X) && pictureBox2->Location.Y <= 500)
+				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y + 1);
+					this->pictureBox5->Height += 1;
+				}
 				else
 					stage=1;
 				}
@@ -206,6 +227,7 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
 				this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X, pictureBox4->Location.Y - 1);
+				this->pictureBox5->Height -= 1;
 			}
 			else
 			{
@@ -213,19 +235,20 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 				{
 					this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X+1, pictureBox4->Location.Y);
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X+1, pictureBox5->Location.Y);
 
 				}
 				if (pictureBox2->Location.X > pictureBox3->Location.X)
 				{
 					this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X + 1, pictureBox4->Location.Y);
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X + 1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 1, pictureBox5->Location.Y);
 				}
 				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox4->Location.Y!=pictureBox3->Location.Y - 52)
 				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X , pictureBox2->Location.Y+1);
 					this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X , pictureBox4->Location.Y+1);
-
-
+					this->pictureBox5->Height += 1;
 				}
 				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox4->Location.Y == pictureBox3->Location.Y - 52) stage=2;
 				
@@ -235,15 +258,23 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			if (pictureBox2->Location.Y > 300&& pictureBox2->Location.X==pictureBox3->Location.X)
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
+				this->pictureBox5->Height -= 1;
 			}
 			else{
-				if(pictureBox2->Location.X > pictureBox1->Location.X)
-					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X-1, pictureBox2->Location.Y);
+				if (pictureBox2->Location.X > pictureBox1->Location.X)
+				{
+					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X - 1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X - 1, pictureBox5->Location.Y);
+				}
 				if (pictureBox2->Location.X < pictureBox1->Location.X)
-					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+1, pictureBox2->Location.Y);
+				{
+					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X + 1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 1, pictureBox5->Location.Y);
+				}
 				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y != pictureBox1->Location.Y-67)
 				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y+1);
+					this->pictureBox5->Height += 1;
 				}
 				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y == pictureBox1->Location.Y - 67) stage = 3;
 
@@ -256,6 +287,7 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
 				this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y - 1);
+				this->pictureBox5->Height -= 1;
 			}
 			else
 			{
@@ -263,19 +295,20 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 				{
 					this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X + 1, pictureBox1->Location.Y);
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X + 1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 1, pictureBox5->Location.Y);
 
 				}
 				if (pictureBox2->Location.X > pictureBox3->Location.X)
 				{
 					this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X + 1, pictureBox1->Location.Y);
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X + 1, pictureBox2->Location.Y);
+					this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 1, pictureBox5->Location.Y);
 				}
 				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox1->Location.Y != pictureBox3->Location.Y - 104)
 				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y + 1);
 					this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y + 1);
-
-
+					this->pictureBox5->Height += 1;
 				}
 				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox1->Location.Y == pictureBox3->Location.Y - 104) stage=4;
 
@@ -283,11 +316,17 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			break;
 
 		case 4://pozycja wyjsciowa
-			if(pictureBox2->Location.Y>100)
+			if (pictureBox2->Location.Y > 100)
+			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
-			if(pictureBox2->Location.X<676)
-				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+1, pictureBox2->Location.Y);
-
+				this->pictureBox5->Height -= 1;
+			}
+			if (pictureBox2->Location.X < 676)
+			{
+				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X + 1, pictureBox2->Location.Y);
+				this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 1, pictureBox5->Location.Y);
+			}
+			this->timer1->Stop();
 			break;
 			
 
