@@ -47,12 +47,13 @@ namespace CppWinForm1 {
 
 
 
-	private: System::Windows::Forms::Timer^  timer2;
-	private: System::Windows::Forms::Timer^  timer3;
-	private: System::Windows::Forms::Timer^  timer4;
-	private: System::Windows::Forms::Timer^  timer5;
-	private: System::Windows::Forms::Timer^  timer6;
+
+
+
+
+
 	private: System::ComponentModel::IContainer^  components;
+	private: System::Windows::Forms::Button^  button2;
 	protected:
 
 	private:
@@ -78,11 +79,7 @@ namespace CppWinForm1 {
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer3 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer4 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer5 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer6 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -149,6 +146,16 @@ namespace CppWinForm1 {
 			this->timer1->Interval = 4;
 			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(13, 173);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(222, 23);
+			this->button2->TabIndex = 6;
+			this->button2->Text = L"Losuj elementy";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -156,7 +163,8 @@ namespace CppWinForm1 {
 			this->AutoSize = true;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->ClientSize = System::Drawing::Size(579, 331);
+			this->ClientSize = System::Drawing::Size(784, 612);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox1);
@@ -287,5 +295,21 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 	
 }
 	
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (!timer1->Enabled)
+	{
+		this->pictureBox1->Location = System::Drawing::Point(rand() % 330 + 340, 562);
+		this->pictureBox3->Location = System::Drawing::Point(rand() % 330 + 340, 562);
+		this->pictureBox4->Location = System::Drawing::Point(rand() % 320 + 340, 562);
+		while (this->pictureBox1->Bounds.IntersectsWith(this->pictureBox3->Bounds) || this->pictureBox1->Bounds.IntersectsWith(this->pictureBox4->Bounds) ||
+			this->pictureBox3->Bounds.IntersectsWith(this->pictureBox1->Bounds) || this->pictureBox3->Bounds.IntersectsWith(this->pictureBox4->Bounds) ||
+			this->pictureBox4->Bounds.IntersectsWith(this->pictureBox1->Bounds) || this->pictureBox4->Bounds.IntersectsWith(this->pictureBox3->Bounds))
+		{
+			this->pictureBox1->Location = System::Drawing::Point(rand() % 330 + 340, 562);
+			this->pictureBox3->Location = System::Drawing::Point(rand() % 330 + 340, 562);
+			this->pictureBox4->Location = System::Drawing::Point(rand() % 320 + 340, 562);
+		}
+	}
+}
 };
 }
