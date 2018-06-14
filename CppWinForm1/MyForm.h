@@ -57,9 +57,7 @@ namespace CppWinForm1 {
 
 	private:
 		/// <summary>
-		int square_x;
-		int triangle_x=372;
-		int circle_x;
+		
 		//enum class stage_type {search_triangle,move_triangle,search_circle,move_circle,end};
 		int  stage=0;
 		/// </summary>
@@ -185,11 +183,11 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 	
 		switch (stage) {
 		case 0://szuka trojkata
-			if(pictureBox2->Location.X != triangle_x+25)
+			if(pictureBox2->Location.X != pictureBox4->Location.X)
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X - 1, pictureBox2->Location.Y);
 			else {
 
-				if (pictureBox2->Location.X == (triangle_x+25)&&pictureBox2->Location.Y <= 500)
+				if (pictureBox2->Location.X == (pictureBox4->Location.X)&&pictureBox2->Location.Y <= 500)
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y + 1);
 				else
 					stage=1;
