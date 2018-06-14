@@ -88,7 +88,7 @@ namespace CppWinForm1 {
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
 			this->pictureBox2->Location = System::Drawing::Point(676, 100);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(43, 68);
+			this->pictureBox2->Size = System::Drawing::Size(44, 68);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 1;
 			this->pictureBox2->TabStop = false;
@@ -119,7 +119,7 @@ namespace CppWinForm1 {
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
 			this->pictureBox3->Location = System::Drawing::Point(452, 562);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(52, 50);
+			this->pictureBox3->Size = System::Drawing::Size(50, 50);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox3->TabIndex = 4;
 			this->pictureBox3->TabStop = false;
@@ -154,7 +154,7 @@ namespace CppWinForm1 {
 			// pictureBox5
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(695, 99);
+			this->pictureBox5->Location = System::Drawing::Point(696, 99);
 			this->pictureBox5->Name = L"pictureBox5";
 			this->pictureBox5->Size = System::Drawing::Size(5, 2);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
@@ -198,14 +198,14 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 	
 		switch (stage) {
 		case 0://szuka trojkata
-			if (pictureBox2->Location.X != pictureBox4->Location.X+10)
+			if (pictureBox2->Location.X != pictureBox4->Location.X)
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X - 1, pictureBox2->Location.Y);
 				this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X - 1, pictureBox5->Location.Y);
 			}
 			else {
 
-				if (pictureBox2->Location.X == (pictureBox4->Location.X+10) && pictureBox2->Location.Y <= 492)
+				if (pictureBox2->Location.X == (pictureBox4->Location.X) && pictureBox2->Location.Y <= 494)
 				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y + 1);
 					this->pictureBox5->Height += 1;
