@@ -187,7 +187,7 @@ namespace CppWinForm1 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(134, 98);
 			this->button3->TabIndex = 8;
-			this->button3->Text = L"w lewo";
+			this->button3->Text = L"Left";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
@@ -197,7 +197,7 @@ namespace CppWinForm1 {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(141, 98);
 			this->button4->TabIndex = 9;
-			this->button4->Text = L"w prawo";
+			this->button4->Text = L"Right";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
@@ -207,7 +207,7 @@ namespace CppWinForm1 {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(137, 109);
 			this->button5->TabIndex = 10;
-			this->button5->Text = L"do góry";
+			this->button5->Text = L"Up";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
@@ -217,18 +217,19 @@ namespace CppWinForm1 {
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(137, 111);
 			this->button6->TabIndex = 11;
-			this->button6->Text = L"w dó³";
+			this->button6->Text = L"Down";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(215, 730);
+			this->button8->Location = System::Drawing::Point(206, 730);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(96, 92);
+			this->button8->Size = System::Drawing::Size(119, 92);
 			this->button8->TabIndex = 13;
-			this->button8->Text = L"upuœæ";
+			this->button8->Text = L"Drop";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
 			// MyForm
 			// 
@@ -423,36 +424,36 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	}
 }
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X , pictureBox2->Location.Y-10);
-	this->pictureBox5->Height -= 10;
+	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X , pictureBox2->Location.Y-25);
+	this->pictureBox5->Height -= 25;
 	
-	if (this->pictureBox2->Bottom >= this->pictureBox1->Top)
+	if (this->pictureBox2->Bottom > this->pictureBox1->Top+25&&this->pictureBox2->Left >= this->pictureBox1->Left&&this->pictureBox2->Left <= this->pictureBox1->Left + 30)
 	{
 
 		circle = true;
 	}
-	if (this->pictureBox2->Bottom >= this->pictureBox3->Top)
+	if (this->pictureBox2->Bottom > this->pictureBox3->Top+25&&this->pictureBox2->Left >= this->pictureBox3->Left&&this->pictureBox2->Left <= this->pictureBox3->Left + 30)
 	{
 
 		rectangle = true;
 	}
-	if (this->pictureBox2->Bottom >= this->pictureBox4->Top)
+	if (this->pictureBox2->Bottom > this->pictureBox4->Top+25&&this->pictureBox2->Left >= this->pictureBox4->Left&&this->pictureBox2->Left <= this->pictureBox4->Left + 30)
 	{
 
 		triangle = true;
 	}
 	if (circle)
 	{
-		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y - 10);
+		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y - 25);
 	}
 
 	if (triangle)
 	{
-		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X, pictureBox4->Location.Y - 10);
+		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X, pictureBox4->Location.Y - 25);
 	}
 	if (rectangle)
 	{
-		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X, pictureBox3->Location.Y - 10);
+		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X, pictureBox3->Location.Y - 25);
 	}
 
 }
@@ -460,71 +461,105 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 		
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
 
-	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y+10);
-	this->pictureBox5->Height += 10;
-	if (this->pictureBox2->Bottom >= this->pictureBox1->Top)
+	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y+25);
+	this->pictureBox5->Height += 25;
+	if (this->pictureBox2->Bottom > this->pictureBox1->Top+25&&this->pictureBox2->Left >= this->pictureBox1->Left&&this->pictureBox2->Left <= this->pictureBox1->Left+30)
 	{
 		
 		 circle = true;
 	}
-	if (this->pictureBox2->Bottom >= this->pictureBox3->Top)
+	if (this->pictureBox2->Bottom > this->pictureBox3->Top+25&&this->pictureBox2->Left >= this->pictureBox3->Left&&this->pictureBox2->Left <= this->pictureBox3->Left + 30)
 	{
 		
 		 rectangle = true;
 	}
-	if (this->pictureBox2->Bottom >= this->pictureBox4->Top)
+	if (this->pictureBox2->Bottom > this->pictureBox4->Top+25&&this->pictureBox2->Left >= this->pictureBox4->Left&&this->pictureBox2->Left <= this->pictureBox4->Left + 30)
 	{
 		
 		triangle = true;
 	}
 	if (circle)
 	{
-		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y + 10);
+		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X, pictureBox1->Location.Y + 25);
 	}
 
 	if (triangle)
 	{
-		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X, pictureBox4->Location.Y + 10);
+		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X, pictureBox4->Location.Y + 25);
 	}
 	if (rectangle)
 	{
-		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X, pictureBox3->Location.Y + 10);
+		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X, pictureBox3->Location.Y + 25);
 	}
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+10, pictureBox2->Location.Y );
-	this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 10, pictureBox5->Location.Y);
+	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+25, pictureBox2->Location.Y );
+	this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X + 25, pictureBox5->Location.Y);
+	if (this->pictureBox2->Bottom > this->pictureBox1->Top+25&&this->pictureBox2->Left >= this->pictureBox1->Left&&this->pictureBox2->Left <= this->pictureBox1->Left + 30)
+	{
 
+		circle = true;
+	}
+	if (this->pictureBox2->Bottom > this->pictureBox3->Top+25&&this->pictureBox2->Left >= this->pictureBox3->Left&&this->pictureBox2->Left <= this->pictureBox3->Left + 30)
+	{
+
+		rectangle = true;
+	}
+	if (this->pictureBox2->Bottom > this->pictureBox4->Top+25&&this->pictureBox2->Left >= this->pictureBox4->Left&&this->pictureBox2->Left <= this->pictureBox4->Left + 30)
+	{
+
+		triangle = true;
+	}
 	if (circle)
 	{
-		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X+10, pictureBox1->Location.Y );
+		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X+25, pictureBox1->Location.Y );
 	}
 
 	if (triangle)
 	{
-		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X+10, pictureBox4->Location.Y + 10);
+		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X+25, pictureBox4->Location.Y );
 	}
 	if (rectangle)
 	{
-		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X+10, pictureBox3->Location.Y + 10);
+		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X+25, pictureBox3->Location.Y );
 	}
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X-10, pictureBox2->Location.Y );
-	this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X - 10, pictureBox5->Location.Y);
+	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X-25, pictureBox2->Location.Y );
+	this->pictureBox5->Location = System::Drawing::Point(pictureBox5->Location.X - 25, pictureBox5->Location.Y);
+	if (this->pictureBox2->Bottom >= this->pictureBox1->Top-25&&this->pictureBox2->Left >= this->pictureBox1->Left&&this->pictureBox2->Left <= this->pictureBox1->Left + 30)
+	{
+
+		circle = true;
+	}
+	if (this->pictureBox2->Bottom > this->pictureBox3->Top+25&&this->pictureBox2->Left >= this->pictureBox3->Left&&this->pictureBox2->Left <= this->pictureBox3->Left + 30)
+	{
+
+		rectangle = true;
+	}
+	if (this->pictureBox2->Bottom > this->pictureBox4->Top+25&&this->pictureBox2->Left >= this->pictureBox4->Left&&this->pictureBox2->Left <= this->pictureBox4->Left + 30)
+	{
+
+		triangle = true;
+	}
 	if (circle)
 	{
-		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X-10, pictureBox1->Location.Y );
+		this->pictureBox1->Location = System::Drawing::Point(pictureBox1->Location.X-25, pictureBox1->Location.Y );
 	}
 
 	if (triangle)
 	{
-		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X-10, pictureBox4->Location.Y );
+		this->pictureBox4->Location = System::Drawing::Point(pictureBox4->Location.X-25, pictureBox4->Location.Y );
 	}
 	if (rectangle)
 	{
-		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X-10, pictureBox3->Location.Y );
+		this->pictureBox3->Location = System::Drawing::Point(pictureBox3->Location.X-25, pictureBox3->Location.Y );
 	}
+}
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+	triangle = false;
+	rectangle = false;
+	circle = false;
 }
 };
 }
