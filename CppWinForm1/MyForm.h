@@ -60,8 +60,8 @@ namespace CppWinForm1 {
 		int square_x;
 		int triangle_x=372;
 		int circle_x;
-		enum stage_type {search_triangle,move_triangle,search_circle,move_circle,end};
-		stage_type  stage=search_triangle;
+		//enum class stage_type {search_triangle,move_triangle,search_circle,move_circle,end};
+		int  stage=0;
 		/// </summary>
 
 
@@ -184,18 +184,18 @@ namespace CppWinForm1 {
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 	
 		switch (stage) {
-		case search_triangle:
+		case 0://szuka trojkata
 			if(pictureBox2->Location.X != triangle_x+25)
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X - 1, pictureBox2->Location.Y);
 			else {
 
-				if (pictureBox2->Location.X == (triangle_x+25)&&pictureBox2->Location.Y <= 478)
+				if (pictureBox2->Location.X == (triangle_x+25)&&pictureBox2->Location.Y <= 500)
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y + 1);
 				else
-					stage=move_triangle;
+					stage=1;
 				}
 			break;
-		case 1:
+		case 1://ustawia trojkat
 			if (pictureBox2->Location.Y >= 300&&pictureBox2->Location.X!=pictureBox3->Location.X)
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
@@ -221,11 +221,11 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 
 
 				}
-				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox4->Location.Y == pictureBox3->Location.Y - 52) stage=search_circle;
+				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox4->Location.Y == pictureBox3->Location.Y - 52) stage=2;
 				
 			}
 			break;
-		case 2:
+		case 2://szuka kola
 			if (pictureBox2->Location.Y > 300&& pictureBox2->Location.X==pictureBox3->Location.X)
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
@@ -235,17 +235,17 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X-1, pictureBox2->Location.Y);
 				if (pictureBox2->Location.X < pictureBox1->Location.X)
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+1, pictureBox2->Location.Y);
-				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y != pictureBox1->Location.Y-52)
+				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y != pictureBox1->Location.Y-67)
 				{
 					this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y+1);
 				}
-				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y == pictureBox1->Location.Y - 52) stage=move_circle;
+				if (pictureBox2->Location.X == pictureBox1->Location.X&&pictureBox2->Location.Y == pictureBox1->Location.Y - 67) stage = 3;
 
 			}
 
 			
 			break;
-		case 3:
+		case 3://ustawia kolo
 			if (pictureBox2->Location.Y > 300 && pictureBox2->Location.X != pictureBox3->Location.X)
 			{
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
@@ -271,14 +271,16 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 
 
 				}
-				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox1->Location.Y == pictureBox3->Location.Y - 52) stage=end;
+				if (pictureBox2->Location.X == pictureBox3->Location.X&&pictureBox1->Location.Y == pictureBox3->Location.Y - 104) stage=4;
 
 			}
 			break;
 
-		case 4:
-			if(pictureBox2->Location.Y>100) 
+		case 4://pozycja wyjsciowa
+			if(pictureBox2->Location.Y>100)
 				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X, pictureBox2->Location.Y - 1);
+			if(pictureBox2->Location.X<676)
+				this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X+1, pictureBox2->Location.Y);
 
 			break;
 			
