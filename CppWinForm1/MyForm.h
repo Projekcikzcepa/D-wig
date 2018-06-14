@@ -99,20 +99,18 @@ namespace CppWinForm1 {
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Default;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(1577, 223);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(7);
+			this->pictureBox2->Location = System::Drawing::Point(676, 100);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(100, 152);
+			this->pictureBox2->Size = System::Drawing::Size(44, 68);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 1;
 			this->pictureBox2->TabStop = false;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(1472, 80);
-			this->button1->Margin = System::Windows::Forms::Padding(7);
+			this->button1->Location = System::Drawing::Point(631, 36);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(329, 51);
+			this->button1->Size = System::Drawing::Size(141, 23);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"START";
 			this->button1->UseVisualStyleBackColor = true;
@@ -121,10 +119,9 @@ namespace CppWinForm1 {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(796, 1254);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(7);
+			this->pictureBox1->Location = System::Drawing::Point(341, 562);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(117, 112);
+			this->pictureBox1->Size = System::Drawing::Size(50, 50);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 3;
 			this->pictureBox1->TabStop = false;
@@ -133,10 +130,9 @@ namespace CppWinForm1 {
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(1055, 1254);
-			this->pictureBox3->Margin = System::Windows::Forms::Padding(7);
+			this->pictureBox3->Location = System::Drawing::Point(452, 562);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(121, 112);
+			this->pictureBox3->Size = System::Drawing::Size(50, 50);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox3->TabIndex = 4;
 			this->pictureBox3->TabStop = false;
@@ -145,10 +141,9 @@ namespace CppWinForm1 {
 			// pictureBox4
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(912, 1254);
-			this->pictureBox4->Margin = System::Windows::Forms::Padding(7);
+			this->pictureBox4->Location = System::Drawing::Point(391, 562);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(140, 112);
+			this->pictureBox4->Size = System::Drawing::Size(60, 50);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox4->TabIndex = 5;
 			this->pictureBox4->TabStop = false;
@@ -161,10 +156,9 @@ namespace CppWinForm1 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(30, 386);
-			this->button2->Margin = System::Windows::Forms::Padding(7);
+			this->button2->Location = System::Drawing::Point(13, 173);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(518, 51);
+			this->button2->Size = System::Drawing::Size(222, 23);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Losuj elementy";
 			this->button2->UseVisualStyleBackColor = true;
@@ -173,19 +167,19 @@ namespace CppWinForm1 {
 			// pictureBox5
 			// 
 			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(1622, 221);
-			this->pictureBox5->Margin = System::Windows::Forms::Padding(7);
+			this->pictureBox5->Location = System::Drawing::Point(696, 99);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(12, 4);
+			this->pictureBox5->Size = System::Drawing::Size(5, 2);
 			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pictureBox5->TabIndex = 7;
 			this->pictureBox5->TabStop = false;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(56, 727);
+			this->button3->Location = System::Drawing::Point(24, 326);
+			this->button3->Margin = System::Windows::Forms::Padding(1, 1, 1, 1);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(134, 98);
+			this->button3->Size = System::Drawing::Size(57, 44);
 			this->button3->TabIndex = 8;
 			this->button3->Text = L"w lewo";
 			this->button3->UseVisualStyleBackColor = true;
@@ -193,9 +187,10 @@ namespace CppWinForm1 {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(340, 727);
+			this->button4->Location = System::Drawing::Point(146, 326);
+			this->button4->Margin = System::Windows::Forms::Padding(1, 1, 1, 1);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(141, 98);
+			this->button4->Size = System::Drawing::Size(60, 44);
 			this->button4->TabIndex = 9;
 			this->button4->Text = L"w prawo";
 			this->button4->UseVisualStyleBackColor = true;
@@ -203,9 +198,10 @@ namespace CppWinForm1 {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(200, 558);
+			this->button5->Location = System::Drawing::Point(86, 250);
+			this->button5->Margin = System::Windows::Forms::Padding(1, 1, 1, 1);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(137, 109);
+			this->button5->Size = System::Drawing::Size(59, 49);
 			this->button5->TabIndex = 10;
 			this->button5->Text = L"do góry";
 			this->button5->UseVisualStyleBackColor = true;
@@ -213,9 +209,10 @@ namespace CppWinForm1 {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(188, 917);
+			this->button6->Location = System::Drawing::Point(81, 411);
+			this->button6->Margin = System::Windows::Forms::Padding(1, 1, 1, 1);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(137, 111);
+			this->button6->Size = System::Drawing::Size(59, 50);
 			this->button6->TabIndex = 11;
 			this->button6->Text = L"w dó³";
 			this->button6->UseVisualStyleBackColor = true;
@@ -223,21 +220,22 @@ namespace CppWinForm1 {
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(215, 730);
+			this->button8->Location = System::Drawing::Point(92, 327);
+			this->button8->Margin = System::Windows::Forms::Padding(1, 1, 1, 1);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(96, 92);
+			this->button8->Size = System::Drawing::Size(41, 41);
 			this->button8->TabIndex = 13;
 			this->button8->Text = L"upuœæ";
 			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(14, 29);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->ClientSize = System::Drawing::Size(1829, 1365);
+			this->ClientSize = System::Drawing::Size(784, 612);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
@@ -251,7 +249,6 @@ namespace CppWinForm1 {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox2);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(7);
 			this->Name = L"MyForm";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Text = L"DŸwig";
@@ -398,10 +395,7 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 				this->timer1->Stop();
 				stage = 0;
 			}
-			//this->timer1->Stop();
 			break;
-			
-
 		}
 	
 }
@@ -425,7 +419,6 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->pictureBox2->Location = System::Drawing::Point(pictureBox2->Location.X , pictureBox2->Location.Y-10);
 	this->pictureBox5->Height -= 10;
-	
 	if (this->pictureBox2->Bottom >= this->pictureBox1->Top)
 	{
 
